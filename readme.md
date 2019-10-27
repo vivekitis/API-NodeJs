@@ -5,9 +5,9 @@ https://developers.smsedge.io/v1/reference
 
 
 ## Installation
-You can get the SMSEdge package via a NPM package called `@smsedge/smsedge-api-node-js`. See <https://www.npmjs.com/package/@smsedge/smsedge-api-node-js>
+You can get the SMSEdge package via a NPM package called `smsedge-api-node-js`. See <https://www.npmjs.com/package/smsedge-api-node-js>
 ```npm
-$ npm i @smsedge/smsedge-api-node-js
+$ npm i smsedge-api-node-js
 ``` 
 
 ## Initialization
@@ -15,7 +15,7 @@ $ npm i @smsedge/smsedge-api-node-js
 Use the API Key from your account (https://app.smsedge.io/users/) to create a new SmsEdgeApi instance.
 
 ```js
-const api = require('@smsedge/smsedge-api-node-js');
+const api = require('smsedge-api-node-js');
 
 const SMSEdgeApi = new api('') // api_key is required, For example: K_xGA286GbLxGf7zWM;
 ```
