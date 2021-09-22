@@ -403,13 +403,27 @@ module.exports = class SMSEdgeApi {
             qs: fields
         };
 
-        return new Promise(function (resolve) {
+        return new Promise(function (resolve, reject) {
             request(options, function (error, response, body) {
                 if (error) {
                     throw new Error(`Can't proceed request ${error}`);
                 }
-                const res = JSON.parse(body);
-                resolve(res.find(e => !!e));
+                body = "<>";
+                try {
+                    const res = JSON.parse(body);
+                    resolve(res.find(e => !!e));
+                }catch(e) {
+                    let resp = {
+                        success: false,
+                        data: [],
+                        errors: [ 'Failed To Parse Response As JSON' ],
+                        response: {
+                            code: 500,
+                            description: 'Response Not JSON: '+body,
+                        },
+                    }
+                    resolve(resp);
+                }
             });
         })
     }

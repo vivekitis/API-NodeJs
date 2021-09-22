@@ -71,3 +71,6 @@ fabric.properties
 
 .idea
 
+node_modules
+testfile.js
+package-lock.json
