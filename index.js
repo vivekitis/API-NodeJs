@@ -408,7 +408,6 @@ module.exports = class SMSEdgeApi {
                 if (error) {
                     throw new Error(`Can't proceed request ${error}`);
                 }
-                body = "<>";
                 try {
                     const res = JSON.parse(body);
                     resolve(res.find(e => !!e));
